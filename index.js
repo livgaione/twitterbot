@@ -22,7 +22,7 @@ function BotInit() {
 
 	Bot.get('search/tweets', query, BotGotLatestTweet);
 
-	function BotGotLatestTweet (error, data, response) {
+	function BotGotLatestTweet (error, data) {
 		if (error) {
 			console.log('Bot não pôde achar o último tweet, : ' + error);
 		}
@@ -33,7 +33,7 @@ function BotInit() {
 
 			Bot.post('statuses/retweet/:id', id, BotRetweeted);
 			
-			function BotRetweeted(error, response) {
+			function BotRetweeted(error) {
 				if (error) {
 					console.log('Bot não pode retweetar, : ' + error);
 				}
