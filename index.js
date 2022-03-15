@@ -16,7 +16,7 @@ console.log('Este bot está rodando...');
 /* BotInit() : Para iniciar o bot */
 function BotInit() {
 	var query = {
-		q: "pedro",
+		q: "#pedroteamotestebot",
 		result_type: "recent"
 	}
 
