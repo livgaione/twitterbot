@@ -8,7 +8,7 @@ const Bot = new Twit({
   consumer_secret:      process.env.CONSUMER_SECRET,
   access_token:         process.env.ACCESS_TOKEN,
   access_token_secret:  process.env.ACCESS_TOKEN_SECRET,
-  timeout_ms:           60 * 1000,
+  timeout_ms:           01 * 1000,
 });
 
 console.log('Este bot está rodando...');
@@ -40,13 +40,13 @@ function BotInit() {
 				else {
 					console.log('Bot retweetou : ' + id.id);
 				}
+				
+				setInterval(BotRetweeted, 30*60*1000);
 			}
 		}
 	}
 }
 
-/* Configure um intervalo de  30 minutos (em microsegundos) */
-setInterval(BotRetweet, 1*60*1000);
 
 /* Inicialize o bot Bot */
 BotInit();
